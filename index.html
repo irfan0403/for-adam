@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Cake - Adam</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    height: 30vh;
+    min-height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 45px;
+}
+
+.header h1 {
+    color: white;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.cake-area {
+    min-height: 50vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cake {
+    width: 260px;
+    position: relative;
+    animation: cakeAppear 1.3s ease;
+}
+
+@keyframes cakeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.layer {
+    width: 100%;
+    height: 48px;
+    background: #f7cf83;
+    position: relative;
+}
+
+.layer::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: #ed5bc9;
+    border-radius: 50%;
+}
+
+.layer:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.top {
+    width: 100%;
+    height: 35px;
+    background: #ee62d2;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.candle {
+    position: absolute;
+    width: 14px;
+    height: 82px;
+    background: #20bce5;
+    left: 50%;
+    top: -83px;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    z-index: 5;
+}
+
+.flame {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: #ffc928;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    top: -30px;
+    left: -3px;
+    animation: flame .35s infinite alternate;
+}
+
+@keyframes flame {
+    from {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    to {
+        transform: rotate(-40deg) scale(1.12);
+    }
+}
+
+.hearts {
+    position: absolute;
+    left: 50%;
+    top: -110px;
+    width: 180px;
+    height: 150px;
+    transform: translateX(-50%);
+}
+
+.heart {
+    position: absolute;
+    color: #f6a9d9;
+    font-size: 22px;
+    animation: floatHeart 3s ease-in-out infinite;
+}
+
+.heart:nth-child(1) {
+    left: 20px;
+    top: 30px;
+}
+
+.heart:nth-child(2) {
+    left: 75px;
+    top: 5px;
+    animation-delay: .5s;
+}
+
+.heart:nth-child(3) {
+    right: 20px;
+    top: 35px;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(4) {
+    left: 55px;
+    top: 65px;
+    animation-delay: 1.4s;
+}
+
+.heart:nth-child(5) {
+    right: 55px;
+    top: 70px;
+    animation-delay: 1.8s;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+}
+
+.name {
+    text-align: center;
+    margin-top: 25px;
+    color: #ed5bc9;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* BUTTON */
+
+.button-area {
+    background: white;
+    text-align: center;
+    padding: 5px 20px 35px;
+}
+
+.wish-button {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #ed5bc9;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.wish-button:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    height: 15vh;
+    background: #20201d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-family: monospace;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Birthday Cake</h1>
+</div>
+
+<div class="cake-area">
+
+    <div class="cake">
+
+        <div class="hearts">
+            <div class="heart">♥</div>
+            <div class="heart">♥</div>
+            <div class="heart">♥</div>
+            <div class="heart">♥</div>
+            <div class="heart">♥</div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="top"></div>
+
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+
+        <div class="name">
+            Adam
+        </div>
+
+    </div>
+
+</div>
+
+<div class="button-area">
+
+    <a href="wish.html" class="wish-button">
+        Open Your Birthday Wish 🎁
+    </a>
+
+</div>
+
+<div class="footer">
+    made for Adam :)
+</div>
+
+</body>
+  </html>
